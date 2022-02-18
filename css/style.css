@@ -107,9 +107,9 @@ h2{
     font-weight: lighter;
     cursor: pointer;
 }
-@media screen and (max-width: 500px){
+@media screen and (max-width: 400px){
     .guess-grid{
-        margin-left: 80px;
+        margin-left:10px;
     }
     header{
         width: 470px;
@@ -127,7 +127,29 @@ h2{
     .keys{
         width: 30px;
         height: 30px;
-        font-size: 20px;
+        font-size: 15px;
+    }
+    .key{
+        height: 33px;
+        font-size: 10px;
+    }
+}
+@media screen and (max-width: 500px){
+    .guess-grid{
+        margin-left:80px;
+    }
+    header{
+        width: 470px;
+    }
+    #game-box{
+        margin-left: 5px;
+        margin-top: 0px;
+    }
+    .content{
+        width: 450px;
+    }
+    h2{
+        margin-left: 440px;
     }
 }
 @media screen and (min-width: 500px) and (max-width: 540px){
