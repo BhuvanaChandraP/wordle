@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+    <title>Wordle</title>
+</head>
+<body>
+  <div id="container">
+  <header>
+    <div class="menu-left">
+      <svg width="21" height="21" viewBox="0 0 21 21" fill="black" xmlns="http://www.w3.org/2000/svg">
+      	<rect x="0.172974" width="20" height="3" rx="1.5" fill="black"></rect>
+      	<rect x="0.172974" y="7" width="20" height="3" rx="1.5"></rect>
+        <rect x="0.172974" y="14" width="20" height="3" rx="1.5"></rect>
+      </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" onclick="instructions()">
+        <path d="M11 18h2v-2h-2v2zm1-16C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-2.21 0-4 1.79-4 4h2c0-1.1.9-2 2-2s2 .9 2 2c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5 0-2.21-1.79-4-4-4z"></path>
+      </svg>
+    </div>
+    <div class="title">Wordle</div>
+    <div class="menu-right">
+      <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+        <path fill="var(--color-tone-1)" d="M16,11V3H8v6H2v12h20V11H16z M10,5h4v14h-4V5z M4,11h4v8H4V11z M20,19h-4v-6h4V19z"></path>
+      </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+      	<path fill="var(--color-tone-1)" d="M19.14,12.94c0.04-0.3,0.06-0.61,0.06-0.94c0-0.32-0.02-0.64-0.07-0.94l2.03-1.58c0.18-0.14,0.23-0.41,0.12-0.61 l-1.92-3.32c-0.12-0.22-0.37-0.29-0.59-0.22l-2.39,0.96c-0.5-0.38-1.03-0.7-1.62-0.94L14.4,2.81c-0.04-0.24-0.24-0.41-0.48-0.41 h-3.84c-0.24,0-0.43,0.17-0.47,0.41L9.25,5.35C8.66,5.59,8.12,5.92,7.63,6.29L5.24,5.33c-0.22-0.08-0.47,0-0.59,0.22L2.74,8.87 C2.62,9.08,2.66,9.34,2.86,9.48l2.03,1.58C4.84,11.36,4.8,11.69,4.8,12s0.02,0.64,0.07,0.94l-2.03,1.58 c-0.18,0.14-0.23,0.41-0.12,0.61l1.92,3.32c0.12,0.22,0.37,0.29,0.59,0.22l2.39-0.96c0.5,0.38,1.03,0.7,1.62,0.94l0.36,2.54 c0.05,0.24,0.24,0.41,0.48,0.41h3.84c0.24,0,0.44-0.17,0.47-0.41l0.36-2.54c0.59-0.24,1.13-0.56,1.62-0.94l2.39,0.96 c0.22,0.08,0.47,0,0.59-0.22l1.92-3.32c0.12-0.22,0.07-0.47-0.12-0.61L19.14,12.94z M12,15.6c-1.98,0-3.6-1.62-3.6-3.6 s1.62-3.6,3.6-3.6s3.6,1.62,3.6,3.6S13.98,15.6,12,15.6z"></path>
+      </svg>
+    </div>
+  </header>
+  <div id="game">
+    <div class="guess-grid">
+      <div id = "1" class="tile"></div>
+      <div id = "2" class="tile"></div>
+      <div id = "3" class="tile"></div>
+      <div id = "4" class="tile"></div>
+      <div id = "5" class="tile"></div>
+      <div id = "6" class="tile"></div>
+      <div id = "7" class="tile"></div>
+      <div id = "8" class="tile"></div>
+      <div id = "9" class="tile"></div>
+      <div id = "10" class="tile"></div>
+      <div id = "11" class="tile"></div>
+      <div id = "12" class="tile"></div>
+      <div id = "13" class="tile"></div>
+      <div id = "14" class="tile"></div>
+      <div id = "15" class="tile"></div>
+      <div id = "16" class="tile"></div>
+      <div id = "17" class="tile"></div>
+      <div id = "18" class="tile"></div>
+      <div id = "19" class="tile"></div>
+      <div id = "20" class="tile"></div>
+      <div id = "21" class="tile"></div>
+      <div id = "22" class="tile"></div>
+      <div id = "23" class="tile"></div>
+      <div id = "24" class="tile"></div>
+      <div id = "25" class="tile"></div>
+      <div id = "26" class="tile"></div>
+      <div id = "27" class="tile"></div>
+      <div id = "28" class="tile"></div>
+      <div id = "29" class="tile"></div>
+      <div id = "30" class="tile"></div>
+    </div>
+    <div class="game-keyboard">
+      <div class="row">
+        <div data-key="q" class="key">Q</div>
+        <div data-key="w" class="key">W</div>
+        <div data-key="e" class="key">E</div>
+        <div data-key="r" class="key">R</div>
+        <div data-key="t" class="key">T</div>
+        <div data-key="y" class="key">Y</div>
+        <div data-key="u" class="key">U</div>
+        <div data-key="i" class="key">I</div>
+        <div data-key="o" class="key">O</div>
+        <div data-key="p" class="key">P</div>
+      </div>
+      <div class="row">
+        <div class="space"></div>
+        <div data-key="a" class="key">A</div>
+        <div data-key="s" class="key">S</div>
+        <div data-key="d" class="key">D</div>
+        <div data-key="f" class="key">F</div>
+        <div data-key="g" class="key">G</div>
+        <div data-key="h" class="key">H</div>
+        <div data-key="j" class="key">J</div>
+        <div data-key="k" class="key">K</div>
+        <div data-key="l" class="key">L</div>
+        <div  class="space"></div>
+      </div>
+      <div class="row">
+        <div data-key="Enter" class="key special">ENTER</div>
+        <div data-key="z" class="key">Z</div>
+        <div data-key="x" class="key">X</div>
+        <div data-key="c" class="key">C</div>
+        <div data-key="v" class="key">V</div>
+        <div data-key="b" class="key">B</div>
+        <div data-key="n" class="key">N</div>
+        <div data-key="m" class="key">M</div>
+        <div data-key="Backspace" class="key special">
+        	<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+            <path d="M22 3H7c-.69 0-1.23.35-1.59.88L0 12l5.41 8.11c.36.53.9.89 1.59.89h15c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H7.07L2.4 12l4.66-7H22v14zm-11.59-2L14 13.41 17.59 17 19 15.59 15.41 12 19 8.41 17.59 7 14 10.59 10.41 7 9 8.41 12.59 12 9 15.59z"></path>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div></div>
+  <div id="game-box">
+    <header>
+      <div class="content">
+      <h1>HOW TO PLAY</h1>
+      <h2 onclick="remove()">+</h2>
+      <p>Guess the <a> WORDLE</a> in six tries.</p>
+      <p>Each guess must be a valid five-letter word. Hit the enter button to submit.</p>
+      <p>After each guess, the color of the tiles will change to show how close your guess was to the word.</p>
+      </div>
+    </header>
+    <div class="examples">
+      <header>
+        <div class="content-container">
+          <b>Examples</b>
+          <div class="game-grid">
+            <div data-key="w" class="keys" style="background-color: #6AAA64; border: none;">W</div>
+            <div data-key="e" class="keys">E</div>
+            <div data-key="a" class="keys">A</div>
+            <div data-key="r" class="keys">R</div>
+            <div data-key="y" class="keys">Y</div>
+          </div>
+          <p>The letter <a>W</a> is in the word and in the correct spot.</p>
+          <div class="game-grid">
+            <div data-key="p" class="keys">P</div>
+            <div data-key="i" class="keys" style="background-color: #C9B458;border: none;">I</div>
+            <div data-key="l" class="keys">L</div>
+            <div data-key="l" class="keys">L</div>
+            <div data-key="s" class="keys">S</div>
+          </div>
+          <p>The letter <a>L</a> is in the word but in the wrong spot.</p>
+          <div class="game-grid">
+            <div data-key="v" class="keys">V</div>
+            <div data-key="a" class="keys">A</div>
+            <div data-key="g" class="keys">G</div>
+            <div data-key="u" class="keys" style="background-color: #787C7E; border: none;">U</div>
+            <div data-key="e" class="keys">E</div>
+          </div>
+          <p>The letter <a>U</a> is not in the word in any spot.</p>
+        </div>
+      </header>
+      <b>A new WORDLE will be available each day!</b>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,151 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Clear Sans','Helvetica Neue','Arial';
+}
+header{
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid #d3d6da;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+header .title{
+    /* font-family: 'nyt-karnakcondensed'; */
+    font-weight: 700;
+    font-size: 37px;
+    /* text-align: center; */
+    /* text-align: center; */
+}
+.guess-grid{
+    display: grid;
+    grid-template-rows: repeat(6,1fr);
+    grid-template-columns: repeat(5,1fr);
+    width: 317px;
+    height: 378px;
+    grid-gap: 5px;
+    padding: 10px;
+    margin: 5px auto;
+}
+.game-grid{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    grid-gap: 5px;
+    margin: 5px auto;
+    margin-top: 20px;
+}
+.tile{
+    border: 2px solid #d3d6da;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* width:fit-content;
+    height: fit-content; */
+}
+.row {
+    display: flex;
+    width: 30em;
+    margin: 0 auto 8px;
+}
+.key{
+    height: 53px;
+    background-color: #d3d6da;
+    border-radius: 4px;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    margin: 0 6px 0 0;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 14px;
+}
+.keys{
+    width: 40px;
+    height: 40px;
+    border: 1.8px solid #939597;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 30px;
+}
+.special{
+    flex: 1.5;
+}
+.space{
+    flex: 0.5
+}
+#game-box{
+    width: 480px;
+    height: 600px;
+    justify-content: center;
+    align-items: center;
+    margin-left: 500px;
+    margin-top: 50px;
+    transition: all 0.6s ease-in-out;
+    display: none;
+}
+h1{
+    font-size: 15px;
+    margin-left: 180px;
+}
+p{
+    font-size: 14px;
+}
+a,b{
+    font-weight: bold;
+    font-size: 14px;
+}
+h2{
+    position: fixed;
+    transform: rotate(45deg);
+    font-size: 35px;
+    margin-left: 465px;
+    margin-top: -40px;
+    font-weight: lighter;
+    cursor: pointer;
+}
+@media screen and (max-width: 500px){
+    .guess-grid{
+        margin-left: 80px;
+    }
+    header{
+        width: 470px;
+    }
+    #game-box{
+        margin-left: 5px;
+        margin-top: 0px;
+    }
+    .content{
+        width: 450px;
+    }
+    h2{
+        margin-left: 440px;
+    }
+}
+@media screen and (min-width: 500px) and (max-width: 540px){
+    #game-box{
+        margin-left: 25px;
+        margin-top: 0px;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 912px){
+    #game-box{
+        margin-left: 160px;
+        margin-top: 0px;
+    }
+}
+@media screen and (min-width: 912px) and (max-width: 1024px){
+    #game-box{
+        margin-left: 220px;
+        margin-top: 0px;
+    }
+}
+@media screen and (min-width: 1024px) and (max-width: 1280px){
+    #game-box{
+        margin-left: 280px;
+        margin-top: 0px;
+    }
+}
