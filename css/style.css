@@ -125,7 +125,7 @@ h2{
         margin-left: 440px;
     }
 }
-@media screen and (min-width: 500px) and (max-width: 540px){
+@media screen and (min-width: 300px) and (max-width: 540px){
     #game-box{
         margin-left: 25px;
         margin-top: 0px;
